@@ -55,23 +55,15 @@ public class Main
         }
     };
 
-    public static Scanner input = new Scanner(System.in);
+    private static Scanner input = new Scanner(System.in);
 
     public static void main(String args[])
     {
-//        System.out.println(Students);
-//        for (Student student : Students)
-//        {
-//            PrintStudentReport(student);
-//            PrintStudentAverageGrade(student);
-//        }
-//        PrintFailedStudents();
         PrintMenu();
-//        String s = input.nextLine();
-//        System.out.println("you entered " + s);
     }
 
-    public static void PrintMenu()
+    // Method for printing the main menu
+    private static void PrintMenu()
     {
         System.out.println("Student Records System");
         System.out.println("1. Student Report");
@@ -96,8 +88,10 @@ public class Main
         }
     }
 
-    public static void PrintStudentReportMenu()
+    // Method for printing the student record menu
+    private static void PrintStudentReportMenu()
     {
+        // prints all students with assigned number
         for (int i = 0; i < Students.size(); i++)
         {
             Student student = Students.get(i);
@@ -106,6 +100,7 @@ public class Main
 
         String s = ReturnMenu();
 
+        // If the user inputs a valid student number the program will print their report
         if (Character.isDigit(s.charAt(0)) && Integer.parseInt(s) < Students.size())
         {
             PrintStudentReport(Students.get(Integer.parseInt(s)));
@@ -113,19 +108,22 @@ public class Main
 
     }
 
-    public static void PrintFailedStudentsMenu()
+    // Method for printing failed students menu
+    private static void PrintFailedStudentsMenu()
     {
         PrintFailedStudents();
         ReturnMenu();
     }
 
-    public static void PrintAverageGradeMenu()
+    // Method for printing average grade menu
+    private static void PrintAverageGradeMenu()
     {
         PrintAverageGrades();
         ReturnMenu();
     }
 
-    public static String ReturnMenu()
+    // method fro printing generic return menu, back or quit
+    private static String ReturnMenu()
     {
         System.out.println("b. Back");
         System.out.println("q. Quit");
@@ -143,10 +141,12 @@ public class Main
         return s;
     }
 
-    public static void PrintStudentReport(Student student)
+    // Method for printing out student report
+    private static void PrintStudentReport(Student student)
     {
         System.out.println(String.format("%s's Report", student.getName()));
 
+        // Prints all students lettered grade for each subject
         System.out.println("--------------------------");
         for (Grade grade : student.Grades)
         {
@@ -168,7 +168,8 @@ public class Main
         }
     }
 
-    public static void PrintFailedStudents()
+    // Method for printing out all failed students
+    private static void PrintFailedStudents()
     {
         System.out.println("These students have failed");
         System.out.println("--------------------------");
@@ -181,7 +182,8 @@ public class Main
         }
     }
 
-    public static void PrintAverageGrades()
+    // Method for printing out all students average grades
+    private static void PrintAverageGrades()
     {
         for (Student student : Students)
         {

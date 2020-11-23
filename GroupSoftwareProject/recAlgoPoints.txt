@@ -1,0 +1,9 @@
+* Categories selected when signing up
+* Past Purchases
+* Past Searches
+* What they've clicked on in the past
+
+make the input of the algo as generic as possible to make it easy to implement etxtra data points in the system
+
+
+When the host creates and event do auto search when name has been entered (like stackoverflow)

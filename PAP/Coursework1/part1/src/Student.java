@@ -22,6 +22,7 @@ public class Student
         Grades = grades;
     }
 
+    // Returns mean average of all the students grades
     public double getAverageGrade()
     {
         double total = 0;
@@ -32,6 +33,7 @@ public class Student
         return total / Grades.size();
     }
 
+    // If the student has a grade of F then returns true
     public boolean hasFailed()
     {
         for (Grade grade : Grades)

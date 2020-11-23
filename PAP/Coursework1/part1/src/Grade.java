@@ -9,6 +9,7 @@ public class Grade
         Score = score;
     }
 
+    // Converts a decimal score to a lettered grade
     public static char getLetterGrade(Double score)
     {
         if (score >= 70 && score < 100)
@@ -26,7 +27,8 @@ public class Grade
         } else if (score < 40 && score < 100)
         {
             return 'F';
-        } else {
+        } else
+        {
             return 'E';
         }
     }
