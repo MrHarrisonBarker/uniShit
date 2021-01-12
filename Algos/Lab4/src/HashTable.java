@@ -82,6 +82,7 @@ public class HashTable
             int value = buckets[hashValue + i];
             if (value == key)
             {
+                System.out.println(hashValue + i);
                 return true;
             }
 

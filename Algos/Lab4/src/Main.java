@@ -1,20 +1,10 @@
-import java.util.Random;
-
 public class Main
 {
     public static void main(String[] args)
     {
-        HashTable hashTable = new HashTable(10, 8, 20);
-        hashTable.insert(5);
-        hashTable.insert(2);
-        hashTable.insert(2);
-        hashTable.insert(3);
-        hashTable.insert(2);
-        hashTable.insert(2);
-        hashTable.insert(2);
-        hashTable.remove(2);
-        hashTable.remove(2);
-        System.out.println(hashTable.find(2));
+        HashTable hashTable = new HashTable(11342, 11630, 104);
+        hashTable.insert(33575210);
+        System.out.println(hashTable.find(33575210));
         //        for (int i = 0; i < 20; i++)
 //        {
 //            hashTable.insert((new Random().nextInt(10)) + 1);
