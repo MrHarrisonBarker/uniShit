@@ -3,6 +3,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+class TextColours
+{
+    public static final String TEXT_RED = "\u001B[31m";
+    public static final String TEXT_BLUE = "\u001B[34m";
+    public static final String TEXT_WHITE = "\u001B[0m";
+    public static final String TEXT_GREEN = "\u001B[32m";
+}
+
 public class Grid
 {
     private Cell[][] Cells;
@@ -37,10 +45,10 @@ public class Grid
             {
                 if (j % 3 == 0)
                 {
-                    grid += (" | " + (Cells[i][j].Editable ? Main.TEXT_WHITE : Main.TEXT_BLUE) + Cells[i][j].Number + Main.TEXT_WHITE);
+                    grid += (" | " + (Cells[i][j].Editable ? TextColours.TEXT_WHITE : TextColours.TEXT_BLUE) + Cells[i][j].Number + TextColours.TEXT_WHITE);
                 } else
                 {
-                    grid += (" " + (Cells[i][j].Editable ? Main.TEXT_WHITE : Main.TEXT_BLUE) + Cells[i][j].Number + Main.TEXT_WHITE);
+                    grid += (" " + (Cells[i][j].Editable ? TextColours.TEXT_WHITE : TextColours.TEXT_BLUE) + Cells[i][j].Number + TextColours.TEXT_WHITE);
                 }
             }
             grid += " |\n";
