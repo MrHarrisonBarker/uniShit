@@ -12,7 +12,7 @@ namespace Payment.Test
         {
             Console.WriteLine("Hello World!");
             StripeConfiguration.ApiKey =
-                "sk_test_51HwucKKzP2k6dDDPoAxGHqLYkJGj9hKySeJOd3TWFG36PLscT9FmcBWEX1UZeD16QUJIPIEF37UDBhpoIQj8Junl00KbqMohdV";
+                "sk_test_51ILW9dK2ugLXrgQXeYfqg8i0QGAgLXndihLXovHgu47adBimPAedvIwzfr95uffR9TiyleGFAPY7hfSI9mhdmYBF00hkxlAQMv";
             
             string accountId = "acct_1Hwvx44ICPI34MBa";
             string customerId = "cus_IY2t29dSELhwSK";
@@ -94,23 +94,19 @@ namespace Payment.Test
                 {
                     "card",
                 },
-                Metadata = new Dictionary<string, string>()
-                {
-                    {"EventId", "2"}
-                },
-                OnBehalfOf = "acct_1Hx1Yt3rCdU4mXVY",
-                Customer = customerId,
+                OnBehalfOf = "acct_1IMZdt2fJrKfCTmZ",
+                Customer = "cus_IybZSKDCedhn0K",
                 ConfirmationMethod = "automatic",
                 ApplicationFeeAmount = 10,
                 TransferData = new PaymentIntentTransferDataOptions()
                 {
-                    Destination = "acct_1Hx1Yt3rCdU4mXVY"
+                    Destination = "acct_1IMZdt2fJrKfCTmZ"
                 }
             });
             
             var paymentConfirmation = await service.ConfirmAsync(intent.Id,new PaymentIntentConfirmOptions()
             {
-                PaymentMethod = cardId,
+                PaymentMethod = "card_1IMeMHK2ugLXrgQXkGPh7iTJ",
                 
             });
             
